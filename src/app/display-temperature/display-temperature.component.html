@@ -1,1 +1,11 @@
-<p>display-temperature works!</p>
+<div class="temperature">
+    <div class="temperature__circle">
+        <div class="temperature__line" [style.transform]="calculateRotation()">
+        </div>
+        <div class="temperature__min-max">
+            <div class="temperature__min-max-line temperature--min-line"></div>
+            <div class="temperature__min-max-line temperature--max-line"></div>
+        </div>
+    </div>
+    <div class="temperature__text">{{ targetTemperature }}°C</div>
+</div>

@@ -18,4 +18,17 @@ describe('DisplayTemperatureComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should correctly calculate rotation for target temperature', () => {
+    component.minTemperature = 0;
+    component.maxTemperature = 33;
+    component.targetTemperature = 25;
+  
+    const expectedRotation = 'rotate(234.848deg)';
+  
+    fixture.detectChanges();
+    const targetLine = fixture.nativeElement.querySelector('.temperature__line');
+    expect(targetLine.style.transform).toBe(expectedRotation);
+  });
+  
 });
